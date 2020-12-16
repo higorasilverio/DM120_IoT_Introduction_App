@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'alerta-sonoro',
     loadChildren: () => import('./pages/alerta-sonoro/alerta-sonoro.module').then( m => m.AlertaSonoroPageModule)
   },
+  {
+    path: 'monitoramento',
+    loadChildren: () => import('./pages/monitoramento/monitoramento.module').then( m => m.MonitoramentoPageModule)
+  },
 ];
 
 @NgModule({

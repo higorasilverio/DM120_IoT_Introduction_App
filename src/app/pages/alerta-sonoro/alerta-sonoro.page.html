@@ -17,16 +17,16 @@
     <p>Carregando</p>
   </div>
   <div *ngIf="!isLoading">
-    <ion-card *ngIf="dweet._with[0].content.status_buzzer == 0">
+    <ion-card *ngIf="dweet._with[0].content.status_buzzer == 0" color="danger">
       <ion-card-content style="text-align: center; font-size: 3rem">
         Desligado
-        <ion-icon name="volume-off" color="danger"></ion-icon>
+        <ion-icon name="volume-off" color="light"></ion-icon>
       </ion-card-content>
     </ion-card>
-    <ion-card *ngIf="dweet._with[0].content.status_buzzer == 1">
-      <ion-card-content style="text-align: center; font-size: 3rem">
+    <ion-card *ngIf="dweet._with[0].content.status_buzzer == 1"  color="warning">
+      <ion-card-content style="text-align: center; font-size: 3rem; color: rgb(255, 255, 255);">
         Ligado
-        <ion-icon name="alarm" color="warning"></ion-icon>
+        <ion-icon name="alarm" color="light"></ion-icon>
       </ion-card-content>
     </ion-card>
     <div style="text-align: center">

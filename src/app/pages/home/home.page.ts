@@ -24,4 +24,7 @@ export class HomePage implements OnInit {
   goToSonPage() {
     this.router.navigate(["alerta-sonoro"]);
   }
+  goToMonPage() {
+    this.router.navigate(["monitoramento"]);
+  }
 }

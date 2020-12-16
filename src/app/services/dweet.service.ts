@@ -36,6 +36,13 @@ export class DweetService {
         _with.content.luminosidade,
         _with.content.umidade,
         _with.content.status_buzzer,
+        _with.content.tempMax,
+        _with.content.tempMin,
+        _with.content.umidMax,
+        _with.content.umidMin,
+        _with.content.lumMax,
+        _with.content.lumMin,
+        _with.content.current_color
       );
       _date = this.formatDate(_with.created);
       _time = this.formatTime(_with.created);

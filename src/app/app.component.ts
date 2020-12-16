@@ -37,6 +37,11 @@ export class AppComponent implements OnInit {
       url: "/alerta-sonoro",
       icon: "musical-notes",
     },
+    {
+      title: "Monitoramento",
+      url: "/monitoramento",
+      icon: "clipboard",
+    },
   ];
 
   constructor(

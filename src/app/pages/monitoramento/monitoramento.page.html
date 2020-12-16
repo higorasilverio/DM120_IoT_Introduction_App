@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon
+        name="arrow-back"
+        style="font-size: 2rem"
+        (click)="goBack()"
+      ></ion-icon>
+    </ion-buttons>
+    <ion-title>Monitoramento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isLoading" style="text-align: center; margin-top: 50%">
+    <ion-spinner style="width: 80px; height: 80px"></ion-spinner>
+    <p>Carregando</p>
+  </div>
+  <div *ngIf="!isLoading">
+    <ion-card color="medium">
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 1rem" color="medium">
+        Temperatura máxima: {{dweet._with[0].content.tempMax}}
+      </ion-card-content>
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Temperatura mínima: {{dweet._with[0].content.tempMin}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Umidade máxima: {{dweet._with[0].content.umidMax}}
+      </ion-card-content>
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Umidade mínima: {{dweet._with[0].content.umidMin}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Luminosidade máxima: {{dweet._with[0].content.lumMax}}
+      </ion-card-content>
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Luminosidade mínima: {{dweet._with[0].content.lumMin}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="dweet._with[0].content.current_color == 'verde'" color="success">
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Cor atual: Verde
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="dweet._with[0].content.current_color == 'vermelha'" color="danger">
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Cor atual: Vermelha
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="dweet._with[0].content.current_color == 'azul'" color="tertiary">
+      <ion-card-content style="text-align: center; font-size: 1rem">
+        Cor atual: Azul
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+    <div style="text-align: center">
+      <p>
+        <ion-icon name="calendar" color="primary"></ion-icon
+        >{{dweet._with[0].date}}
+      </p>
+      <p>
+        <ion-icon name="time" color="secondary"></ion-icon>
+        {{dweet._with[0].time}}
+      </p>
+    </div>
+    <chart [options]="options" style="display: block" type="chart"></chart>
+  </div>
+</ion-content>
