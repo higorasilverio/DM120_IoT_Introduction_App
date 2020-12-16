@@ -40,10 +40,6 @@ const routes: Routes = [
     path: 'alerta-sonoro',
     loadChildren: () => import('./pages/alerta-sonoro/alerta-sonoro.module').then( m => m.AlertaSonoroPageModule)
   },
-  {
-    path: 'color',
-    loadChildren: () => import('./pages/color/color.module').then( m => m.ColorPageModule)
-  },
 ];
 
 @NgModule({
