@@ -31,17 +31,15 @@ export class DweetService {
     _withs = new Array<With>();
     for (let _with of data.with) {
       let content: Content;
-      content = new Content(_with.content.temperatura, _with.content.luminosidade);
+      content = new Content(
+        _with.content.temperatura,
+        _with.content.luminosidade,
+        _with.content.umidade
+      );
       _date = this.formatDate(_with.created);
       _time = this.formatTime(_with.created);
       let tempWith: With;
-      tempWith = new With(
-        _with.thing,
-        _with.created,
-        content,
-        _date,
-        _time
-      );
+      tempWith = new With(_with.thing, _with.created, content, _date, _time);
       _withs.push(tempWith);
     }
     dweet = new Dweet(data.this, data.by, data.the, _withs);

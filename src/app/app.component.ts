@@ -1,34 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Platform } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  styleUrls: ["app.component.scss"],
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
+      title: "Home",
+      url: "/home",
+      icon: "home",
     },
     {
-      title: 'Temperatura',
-      url: '/temperature',
-      icon: 'thermometer'
+      title: "Temperatura",
+      url: "/temperature",
+      icon: "thermometer",
     },
     {
-      title: 'Luminosidade',
-      url: '/luminosidade',
-      icon: 'sunny'
+      title: "Luminosidade",
+      url: "/luminosidade",
+      icon: "sunny",
+    },
+    {
+      title: "Umidade",
+      url: "/umidade",
+      icon: "water",
     },
   ];
-  
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -45,9 +50,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split("folder/")[1];
     if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+      this.selectedIndex = this.appPages.findIndex(
+        (page) => page.title.toLowerCase() === path.toLowerCase()
+      );
     }
   }
 }
