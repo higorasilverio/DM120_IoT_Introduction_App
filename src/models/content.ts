@@ -2,11 +2,13 @@ export default class Content {
   private temperatura: string = "0";
   private luminosidade: string = "0";
   private umidade: string = "0";
+  private status_buzzer: boolean = false;
 
-  constructor(temperatura: string, luminosidade: string, umidade: string) {
+  constructor(temperatura: string, luminosidade: string, umidade: string, status_buzzer: boolean) {
     this.temperatura = temperatura;
     this.luminosidade = luminosidade;
     this.umidade = umidade;
+    this.status_buzzer = status_buzzer;
   }
   /** * Getter $temperatura * @return {string } */ public get $temperatura(): string {
     return this.temperatura;
@@ -31,5 +33,13 @@ export default class Content {
     value: string
   ) {
     this.umidade = value;
+  }
+  /** * Getter $status_buzzer * @return {boolean } */ public get $status_buzzer(): boolean {
+    return this.status_buzzer;
+  }
+  /** * Setter $status_buzzer * @param {boolean } value */ public set $status_buzzer(
+    value: boolean
+  ) {
+    this.status_buzzer = value;
   }
 }

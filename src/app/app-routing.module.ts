@@ -36,6 +36,14 @@ const routes: Routes = [
     loadChildren: () =>
       import("./pages/umidade/umidade.module").then((m) => m.UmidadePageModule),
   },
+  {
+    path: 'alerta-sonoro',
+    loadChildren: () => import('./pages/alerta-sonoro/alerta-sonoro.module').then( m => m.AlertaSonoroPageModule)
+  },
+  {
+    path: 'color',
+    loadChildren: () => import('./pages/color/color.module').then( m => m.ColorPageModule)
+  },
 ];
 
 @NgModule({

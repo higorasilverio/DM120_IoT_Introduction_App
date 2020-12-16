@@ -34,7 +34,8 @@ export class DweetService {
       content = new Content(
         _with.content.temperatura,
         _with.content.luminosidade,
-        _with.content.umidade
+        _with.content.umidade,
+        _with.content.status_buzzer,
       );
       _date = this.formatDate(_with.created);
       _time = this.formatTime(_with.created);

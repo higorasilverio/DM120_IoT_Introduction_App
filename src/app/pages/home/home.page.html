@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <p style="text-align: center">Monitoramento de parâmetros</p>
+  <p style="text-align: center">Monitoramento de Parâmetros</p>
 
   <p style="text-align: center">
     <ion-card>
@@ -36,6 +36,15 @@
       >
         <ion-icon name="water" color="secondary"></ion-icon>
         Umidade
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content
+        style="text-align: center; font-size: 2rem"
+        (click)="goToSonPage()"
+      >
+        <ion-icon name="musical-notes" color="success"></ion-icon>
+        Alerta Sonoro
       </ion-card-content>
     </ion-card>
   </p>

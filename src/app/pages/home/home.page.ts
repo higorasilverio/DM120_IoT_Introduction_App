@@ -21,4 +21,7 @@ export class HomePage implements OnInit {
   goToUmiPage() {
     this.router.navigate(["umidade"]);
   }
+  goToSonPage() {
+    this.router.navigate(["alerta-sonoro"]);
+  }
 }
